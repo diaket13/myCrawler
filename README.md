@@ -1,4 +1,4 @@
 # myCrawler
-two purpose
-learn django
-create crawler
+## two purpose
+* learn django 
+* create crawler
