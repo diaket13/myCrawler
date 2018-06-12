@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crawler',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'fpw',  # 数据库名字，
+    #     'USER': 'fpw',  # 数据库登录用户名
+    #     'PASSWORD': '2jKmcPn3',  # 数据库登录密码
+    #     'HOST': 'ffa-mysql-master-dev.caiwu.corp',  # 数据库所在主机
+    #     'PORT': '3381',  # 数据库端口
+    # }
 }
 
 # Password validation

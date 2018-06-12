@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
+import datetime
+from crawler import models
 
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, "index.html", {"list": user_list})
+    return render(request, "index.html", {"list": models.UserInfo.objects.all()})
 
 
 user_list = [
@@ -19,7 +21,7 @@ def login(request):
     if request.method == "POST":
         username = request.POST.get("username", None)
         password = request.POST.get("password", None)
-        temp = {"user": username, "pwd": password}
-        user_list.append(temp)
+        models.UserInfo.objects.create(user=username, pwd=password, bpub_date=datetime.datetime.now())
         print(username, password)
-    return render(request, "index.html", {"list": user_list})
+    # return render(request, "index.html", {"list": models.UserInfo.objects.all()})
+    return redirect('/index/')
